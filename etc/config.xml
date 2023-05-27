@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <oh_theme>
+            <catalog>
+                <category>
+                    <enable_recently_viewed>1</enable_recently_viewed>
+                </category>
+                <product>
+                    <enable_recently_viewed>1</enable_recently_viewed>
+                </product>
+            </catalog>
+            <checkout>
+                <header>
+                    <logo_width>150</logo_width>
+                    <logo_height>auto</logo_height>
+                </header>
+                <footer>
+                    <logo_width>150</logo_width>
+                    <logo_height>auto</logo_height>
+                </footer>
+            </checkout>
+        </oh_theme>
+    </default>
+</config>

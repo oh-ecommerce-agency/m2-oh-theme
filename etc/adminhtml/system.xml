@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="oh_theme" translate="label" sortOrder="100"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Theme</label>
+            <tab>oh_core</tab>
+            <resource>OH_Theme::settings</resource>
+            <group id="mobile_menu" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mobile menu</label>
+                <field id="store_item_cat_id" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store item URL</label>
+                    <comment>Store item will redirect to this category</comment>
+                    <source_model>OH\Theme\Model\Config\Source\Category</source_model>
+                </field>
+            </group>
+            <group id="catalog" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Catalog</label>
+                <group id="category" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category and search</label>
+                    <field id="enable_recently_viewed" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable recently viewed carousel</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+                <group id="product" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product</label>
+                    <field id="enable_recently_viewed" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable recently viewed carousel</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <group id="checkout" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Checkout</label>
+                <group id="header" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header</label>
+                    <field id="logo_width" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Logo width</label>
+                    </field>
+                    <field id="logo_height" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Logo height</label>
+                    </field>
+                </group>
+                <group id="footer" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer</label>
+                    <field id="logo_width" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Logo width</label>
+                    </field>
+                    <field id="logo_height" translate="label comment" type="text"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Logo height</label>
+                    </field>
+                </group>
+                <group id="popup" translate="label"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup</label>
+                    <field id="enabled" translate="label comment" type="select"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable login popup</label>
+                        <tooltip>Apply only when guest checkout is disabled. Leaving it disabled increase site performance</tooltip>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <group id="dev" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Developer</label>
+                <field id="additional_css" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Additional css</label>
+                    <frontend_model>OH\Theme\Block\Adminhtml\System\Config\Form\Field\Css</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

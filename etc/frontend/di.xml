@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Controller\Cart\Index">
+        <plugin name="OH_Theme::hide_prog_bar_empty_cart"
+                type="OH\Theme\Plugin\Checkout\Cart\HideProgressBarEmptyCart"
+                sortOrder="1"/>
+    </type>
+
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="OH_Theme::layout_processor"
+                type="OH\Theme\Plugin\Checkout\LayoutProcessorPlugin"/>
+    </type>
+
+    <type name="Magento\Review\Block\Product\ReviewRenderer">
+        <plugin name="OH_Theme::display_empty_reviews"
+                type="OH\Theme\Plugin\Block\Product\ReviewRendererPlugin"
+                sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Checkout\Block\Cart\Sidebar">
+        <plugin name="OH_Theme::skip_login_popup"
+                type="OH\Theme\Plugin\Customer\SidebarPlugin"
+                sortOrder="1"/>
+    </type>
+
+    <type name="Magento\Customer\Block\Account\AuthenticationPopup">
+        <plugin name="OH_Theme::skip_login_tmpl"
+                type="OH\Theme\Plugin\Customer\AuthenticationPopupBlockPlugin"
+                sortOrder="1"/>
+    </type>
+</config>

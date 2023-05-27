@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OH_Theme::title"
+             title="Theme"
+             parent="OH_Core::oh"
+             module="OH_Theme"
+             translate="title"
+             sortOrder="0"
+             resource="OH_Popup::settings"
+        />
+
+        <add id="OH_Theme::settings"
+             title="Settings"
+             module="OH_Theme"
+             sortOrder="10"
+             translate="title"
+             parent="OH_Theme::title"
+             action="adminhtml/system_config/edit/section/oh_theme/"
+             resource="OH_Theme::settings"
+        />
+    </menu>
+</config>
