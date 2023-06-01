@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace OH\Theme\ViewModel;
 
+use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Sales\ViewModel\Header\LogoPathResolver;
 use Magento\Store\Model\ScopeInterface;
@@ -27,11 +28,18 @@ class Theme implements ArgumentInterface
      */
     private $configProvider;
 
+    /**
+     * @var Session
+     */
+    private $session;
+
     public function __construct(
+        Session $session,
         ConfigProvider $configProvider,
         LogoPathResolver $logoPathResolver,
         Logo $logo
     ) {
+        $this->session = $session;
         $this->logo = $logo;
         $this->logoPathResolver = $logoPathResolver;
         $this->configProvider = $configProvider;
@@ -59,5 +67,14 @@ class Theme implements ArgumentInterface
         }
 
         return $this->configProvider->getValue(sprintf(ConfigProvider::XML_CONFIG_CHECKOUT, 'footer', 'logo_height'), ScopeInterface::SCOPE_STORES);
+    }
+
+    public function getIsVirtualQuote()
+    {
+        if ($this->session->getQuote()->getItemsCount() > 0) {
+            return $this->session->getQuote()->getIsVirtual();
+        }
+
+        return $this->session->getLastRealOrder()->getIsVirtual();
     }
 }
