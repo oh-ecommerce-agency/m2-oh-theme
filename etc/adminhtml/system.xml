@@ -11,6 +11,10 @@
             <group id="mobile_menu" translate="label"
                    showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Mobile menu</label>
+                <field id="store_item_title" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store item title</label>
+                </field>
                 <field id="store_item_cat_id" translate="label comment" type="select"
                        showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Store item URL</label>

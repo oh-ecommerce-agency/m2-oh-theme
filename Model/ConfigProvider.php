@@ -17,6 +17,11 @@ class ConfigProvider
     /**
      * @var string
      */
+    const XML_CONFIG_MOBILE_MENU_STORE_TITLE = 'oh_theme/mobile_menu/store_item_title';
+
+    /**
+     * @var string
+     */
     const XML_CONFIG_CHECKOUT = 'oh_theme/checkout/%s/%s';
 
     /**

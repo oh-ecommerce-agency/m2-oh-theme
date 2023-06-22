@@ -3,6 +3,9 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <oh_theme>
+            <mobile_menu>
+                <store_item_title>Shop</store_item_title>
+            </mobile_menu>
             <catalog>
                 <category>
                     <enable_recently_viewed>1</enable_recently_viewed>

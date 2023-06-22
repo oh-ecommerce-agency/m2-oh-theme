@@ -52,4 +52,9 @@ class MobileMenu implements ArgumentInterface
 
         return $this->url->getUrl($category->getUrl());
     }
+
+    public function getStoreItemTitle()
+    {
+        return $this->configProvider->getValue(ConfigProvider::XML_CONFIG_MOBILE_MENU_STORE_TITLE, ScopeInterface::SCOPE_STORES);
+    }
 }
