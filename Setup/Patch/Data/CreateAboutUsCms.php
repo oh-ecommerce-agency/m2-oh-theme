@@ -13,7 +13,7 @@ class CreateAboutUsCms implements DataPatchInterface
 {
     const CMS_MAP = [
         'homepage' => [
-            'identifier' => 'about-us',
+            'identifier' => 'aboutus',
             'page_layout' => '1column',
             'title' => 'About us',
             'content' => <<<HTML
